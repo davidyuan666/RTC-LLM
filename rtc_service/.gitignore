@@ -1,0 +1,8 @@
+audio_response/
+audio_temp/
+text2speech_temp/
+__pycache__/
+utils/__pycache__/
+controller/__pycache__/
+temp_listen/
+temp_speak/
