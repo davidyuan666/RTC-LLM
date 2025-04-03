@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "pip>=21.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rtc-llm"
+version = "0.1.0"
+description = "A WebRTC-based LLM service"
+authors = [
+    {name = "david yuan", email = "wu.xiguanghua2014@gmail.com"}
+]
+requires-python = ">=3.10"
+dependencies = [
+    "aiortc",
+    "aiohttp",
+    "aiohttp-cors",
+    "webrtcvad",
+    "PyQt5",
+    "whisper",
+    "spacy",
+    "pydub",
+    "av",
+    "pyaudio",
+    "tqdm",
+    "jieba",
+    "colorama",
+    "termcolor",
+    "noisereduce",
+    "torch",
+    "librosa",
+    "audio-separator[cpu]",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-asyncio",
+    "black",
+    "flake8",
+]
+
+[tool.setuptools]
+packages = ["rtc_service"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3

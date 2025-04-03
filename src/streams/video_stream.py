@@ -8,7 +8,10 @@ from aiortc import MediaStreamTrack
 import cv2
 from av import VideoFrame
 
-class VideoTransformTrack(MediaStreamTrack):
+'''
+only pass video to the router_handler
+'''
+class VideoStreamTrack(MediaStreamTrack):
     """
     A video stream track that transforms frames from an another track.
     """

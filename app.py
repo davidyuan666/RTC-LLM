@@ -8,7 +8,7 @@ import os
 import argparse
 import aiohttp_cors
 from aiohttp import web
-from rtc_service.controller.peer_connection_manager import PeerConnectionManager
+from src.controller.peer_connection_manager import PeerConnectionManager
 import logging
 import os
 import argparse
@@ -18,6 +18,9 @@ from aiortc import RTCPeerConnection, RTCSessionDescription
 import json
 import logging
 import asyncio
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class WebRTCServer:
     def __init__(self):
@@ -86,7 +89,7 @@ class WebRTCServer:
             "--host", default="0.0.0.0", help="Host for HTTP rtc_backend (default: 0.0.0.0)"
         )
         parser.add_argument(
-            "--port", type=int, default=8080, help="Port for HTTP rtc_backend (default: 8080)"
+            "--port", type=int, default=os.getenv("PORT", 8080), help="Port for HTTP rtc_backend (default: 8080)"
         )
         parser.add_argument("--record-to", help="Write received media to a file."),
         parser.add_argument("--verbose", "-v", action="count")

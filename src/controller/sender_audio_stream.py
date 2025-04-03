@@ -1,7 +1,7 @@
 from aiortc import MediaStreamTrack
 import webrtcvad
-from rtc_service.utils.logger_util import LoggerConfig
-from rtc_service.utils.vad_util import rewrite_wav,VoiceActivityDetector
+from src.utils.logger_util import LoggerConfig
+from src.utils.vad_util import rewrite_wav,VoiceActivityDetector
 import wave
 from pathlib import Path
 from termcolor import colored
@@ -11,12 +11,12 @@ from aiortc.contrib.media import MediaRecorder, AudioFrame
 from pydub import AudioSegment
 import os
 from enum import Enum
-from brtc_service.configs.config import VAD_CONFIG
+from src.vad import VAD_CONFIG
 from collections import deque
 import numpy as np
 import av
 import time
-from rtc_service.controller.conversation_handler import ConversationHandler
+from src.controller.conversation_handler import ConversationHandler
 
 vad_config = VAD_CONFIG['huawei_P20_pro']
 

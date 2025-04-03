@@ -12,8 +12,10 @@ from rtc_service.utils.logger_util import LoggerConfig
 from rtc_service.controller.router_handler import RouterHandler
 import spacy
 import re
-
-class DataStreamManager:
+'''
+only pass text to the router_handler
+'''
+class DataStream:
     def __init__(self,channels, remote):
         self.channels = channels
         self.remote = remote

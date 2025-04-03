@@ -1,7 +1,7 @@
 import logging
 import time
 from aiortc import MediaStreamTrack
-from rtc_service.utils.logger_util import LoggerConfig
+from src.utils.logger_util import LoggerConfig
 import os
 from aiortc.contrib.media import MediaPlayer, MediaRecorder, AudioFrame
 from pydub import AudioSegment

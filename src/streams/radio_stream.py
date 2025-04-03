@@ -36,7 +36,9 @@ init(autoreset=True)
 from rtc_service.controller.record_session import RecordingSession
 from rtc_service.controller.audio_process import AudioProcessor
 
-
+'''
+only pass audio to the router_handler
+'''
 class RadioStreamTrack(MediaStreamTrack):
     kind = "audio"
 
